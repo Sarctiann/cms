@@ -8,7 +8,3 @@ from python_reflex.pages import index
 app = rx.App()
 app.add_page(index)
 app.compile()
-
-
-def algo(n):
-    return n
