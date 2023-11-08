@@ -7,7 +7,7 @@ __all__ = ["index"]
 @use_layout(sections="hola")
 def index() -> rx.Component:
     return rx.fragment(
-        rx.heading("Devlight", font_size="4em", style=header_style),
+        rx.heading("Devlights", font_size="4em", style=header_style),
     )
 
 
