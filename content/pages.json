@@ -1,0 +1,14 @@
+[
+  {
+    "page_title": "Home",
+    "tab_label": "Home",
+    "markdown_file_en": "home_en.md",
+    "markdown_file_es": "home_es.md"
+  },
+  {
+    "page_title": "About Us",
+    "tab_label": "About Us",
+    "markdown_file_en": "aboutUs_en.md",
+    "markdown_file_es": "aboutUs_es.md"
+  }
+]
