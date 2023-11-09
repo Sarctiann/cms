@@ -1,5 +1,6 @@
 import json
 from functools import wraps
+
 import reflex as rx
 
 from python_reflex.utils import devlights_logo

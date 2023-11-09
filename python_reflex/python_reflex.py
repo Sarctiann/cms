@@ -1,11 +1,14 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 import reflex as rx
 
-from .pages import *
+from .api import init_api
+from .pages import init_pages
 
 
 # Add state and page to the app.
 app = rx.App()
-app.add_page(index)
-app.add_page(about)
+
+init_pages(app)
+init_api(app)
+
 app.compile()

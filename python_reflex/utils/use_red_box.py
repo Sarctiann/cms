@@ -1,4 +1,5 @@
 from functools import wraps
+
 import reflex as rx
 
 __all__ = ["use_red_box"]
