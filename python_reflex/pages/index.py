@@ -1,5 +1,7 @@
 import reflex as rx
 
+from python_reflex.state.sections import SectionState
+
 from ..common import use_layout
 
 __all__ = ["index"]
@@ -12,6 +14,7 @@ def index() -> rx.Component:
             "Devlights",
             style=header_style,
         ),
+        rx.button("Reload Section", on_click=SectionState.reload_sections),
     )
 
 

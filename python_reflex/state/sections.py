@@ -24,7 +24,7 @@ class SectionState(BaseState):
     def tab_labels(self) -> list[str]:
         return [s["tab_label"] for s in self.sections]
 
-    def add_sections(self, sections_dict: dict) -> None:
+    def _add_sections(self, sections_dict: dict) -> None:
         """Add sections to the state."""
         self.sections: list[Section] = [
             Section(
@@ -37,7 +37,12 @@ class SectionState(BaseState):
             if all(attr in s for attr in s.keys())
         ]
 
+    def reload_sections(self) -> None:
+        """Reload the sections."""
+        self._add_sections(file_to_json("content/_sections.json"))
+
     def on_mount(self) -> None:
+        """Load Sections the first time"""
         if len(self.sections) == 0:
             # print("...loading sections")
-            self.add_sections(file_to_json("content/_sections.json"))
+            self.reload_sections()
