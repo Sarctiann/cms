@@ -5,7 +5,6 @@ from .api import init_api
 from .pages import init_pages
 
 
-# Add state and page to the app.
 app = rx.App()
 
 init_pages(app)

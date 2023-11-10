@@ -1,15 +1,11 @@
-import json
 from functools import wraps
 
 import reflex as rx
 
-from python_reflex.utils import devlights_logo
+from ..state.sections import SectionState
+from ..utils import devlights_logo
 
 __all__ = ["use_layout"]
-
-
-with open("content/_sections.json", "r") as f:
-    pages = json.load(f)
 
 
 def use_layout():
@@ -28,13 +24,13 @@ def use_layout():
                     rx.spacer(),
                     rx.tabs(
                         rx.tab_list(
-                            *[
-                                rx.tab(
-                                    section["tab_label"],
+                            rx.foreach(
+                                SectionState.tab_labels,
+                                lambda tab_label: rx.tab(
+                                    tab_label,
                                     style=tab_style,
-                                )
-                                for section in pages
-                            ],
+                                ),
+                            )
                         ),
                         variant="enclosed",
                     ),
@@ -45,6 +41,7 @@ def use_layout():
                 rx.vstack(children(*args, **kwargs), id="content", style=content_style),
                 id="layout_container",
                 style=container_style,
+                on_mount=SectionState.on_mount,
             )
 
         return with_layout

@@ -14,7 +14,6 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 
 ## TODO:
 
-- Load sections into App State
 - create endpoint to re-evaluate sections
 - create home page
 - create components to render with markdown

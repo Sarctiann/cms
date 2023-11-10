@@ -1,6 +1,6 @@
 import reflex as rx
 
-from python_reflex.common import use_layout
+from ..common import use_layout
 
 __all__ = ["index"]
 
@@ -8,8 +8,11 @@ __all__ = ["index"]
 @use_layout()
 def index() -> rx.Component:
     return rx.fragment(
-        rx.heading("Devlights", font_size="4em", style=header_style),
+        rx.heading(
+            "Devlights",
+            style=header_style,
+        ),
     )
 
 
-header_style = dict(margin_top="1em")
+header_style = dict(font_size="4em", margin_top="1em")
