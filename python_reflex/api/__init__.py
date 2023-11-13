@@ -8,5 +8,5 @@ async def test_api() -> JSONResponse:
     return JSONResponse({"message": "Hello World"}, 200)
 
 
-def init_api(app: rx.App):
+def init_api(app: rx.App) -> None:
     app.api.add_api_route("/test_api", test_api)
