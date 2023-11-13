@@ -26,7 +26,7 @@ class SectionState(BaseState):
 
     def _add_sections(self, sections_dict: dict) -> None:
         """Add sections to the state."""
-        self.sections: list[Section] = [
+        new_sections: list[Section] = [
             Section(
                 page_title=s.get("page_title", ""),
                 tab_label=s.get("tab_label", ""),
@@ -36,6 +36,10 @@ class SectionState(BaseState):
             for s in sections_dict
             if all(attr in s for attr in s.keys())
         ]
+        if self.sections == new_sections:
+            print("...No secttion changes found")
+        else:
+            self.sections = new_sections
 
     def reload_sections(self) -> None:
         """Reload the sections."""
