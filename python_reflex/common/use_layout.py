@@ -3,7 +3,7 @@ from functools import wraps
 import reflex as rx
 
 from ..state.sections import SectionState
-from ..utils import devlights_logo
+from ..utils import themed_svg
 
 __all__ = ["use_layout"]
 
@@ -20,7 +20,11 @@ def use_layout():
         def with_layout(*args, **kwargs) -> rx.Component:
             return rx.vstack(
                 rx.hstack(
-                    devlights_logo(),
+                    themed_svg(
+                        "devlights_logo",
+                        color1=("#8E408E", "#8E408E"),
+                        color2=("#1E1F1D", "#FEFFFD"),
+                    ),
                     rx.spacer(),
                     rx.tabs(
                         rx.tab_list(
