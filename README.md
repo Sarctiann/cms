@@ -8,10 +8,47 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 
 - create home page md and replace index page
 - create components to render with markdown
-- unharcode logo in layout and SectionState
-- rename \_sections.json to \_content.json and update structure
+- unharcode logo in layout and SectionState (needs a lot of work... I must change the logic)
 
-### Related Tools
+---
+
+---
+
+## API Reference:
+
+- `_content.json` file structure:
+
+```jsonc
+{
+  "app_bar_img": {
+    "svg_name": "the_svg_name",
+    "colors": [
+      {
+        "custom_color_id": ["light_mode_color", "dark_mode_color"]
+      }
+      // more colors ...
+    ]
+  },
+  "sections": [
+    {
+      "tab_label": "Home",
+      "page_route": "home",
+      "markdown_file_en": "home_en.md",
+      "markdown_file_es": "home_es.md"
+    }
+    //  more pages ...
+    // "index" page_route ( `"/"` ) is reserved for initialization porposes
+  ]
+}
+```
+
+- "index" route ( `"/"` ) is reserved for initialization porposes
+
+---
+
+---
+
+## Related Tools
 
 - VSCode Extensions:
   - Python
@@ -19,7 +56,7 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
   - Black Formatter
   - isort
 
-### To run this:
+## To run this:
 
 > Mac | Linux
 

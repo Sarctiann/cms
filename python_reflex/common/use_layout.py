@@ -2,8 +2,8 @@ from functools import wraps
 
 import reflex as rx
 
+from ..state.app import AppState
 from ..state.sections import SectionState
-from ..utils import themed_svg
 
 __all__ = ["use_layout"]
 
@@ -20,12 +20,8 @@ def use_layout():
         def with_layout(*args, **kwargs) -> rx.Component:
             return rx.vstack(
                 rx.hstack(
-                    themed_svg(
-                        "devlights_logo",
-                        color1=("#8E408E", "#8E408E"),
-                        color2=("#1E1F1D", "#FEFFFD"),
-                    ),
                     rx.spacer(),
+                    AppState.app_bar_img,
                     rx.tabs(
                         rx.tab_list(
                             rx.foreach(
@@ -45,7 +41,6 @@ def use_layout():
                 rx.vstack(children(*args, **kwargs), id="content", style=content_style),
                 id="layout_container",
                 style=container_style,
-                on_mount=SectionState.on_mount,
             )
 
         return with_layout

@@ -1,0 +1,41 @@
+{
+  "app_bar_img": {
+    "svg_name": "devlights_logo",
+    "colors": {
+      "color1": ["#8E408E", "#8E408E"],
+      "color2": ["#1E1F1D", "#FEFFFD"]
+    }
+  },
+  "sections": [
+    {
+      "tab_label": "Home",
+      "page_route": "home",
+      "markdown_file_en": "home_en.md",
+      "markdown_file_es": "home_es.md"
+    },
+    {
+      "tab_label": "About Us",
+      "page_route": "about-us",
+      "markdown_file_en": "aboutUs_en.md",
+      "markdown_file_es": "aboutUs_es.md"
+    },
+    {
+      "tab_label": "Services",
+      "page_route": "services",
+      "markdown_file_en": "services_en.md",
+      "markdown_file_es": "services_es.md"
+    },
+    {
+      "tab_label": "Clients",
+      "page_route": "clients",
+      "markdown_file_en": "clients_en.md",
+      "markdown_file_es": "clients_es.md"
+    },
+    {
+      "tab_label": "Contact Us",
+      "page_route": "contact-us",
+      "markdown_file_en": "contactUs_en.md",
+      "markdown_file_es": "contactUs_es.md"
+    }
+  ]
+}

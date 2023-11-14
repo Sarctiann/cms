@@ -3,7 +3,7 @@ import reflex as rx
 __all__ = ["themed_svg"]
 
 
-def themed_svg(img_name: str, **colors: tuple[str, str]) -> rx.Component:
+def themed_svg(img_name: str, colors: dict[str, tuple[str, str]]) -> rx.Component:
     """
         This utility changes the color of the given svg depending on the color_mode.
         In order to do that, you have to change the values of the `fill` attributes
@@ -32,6 +32,3 @@ def themed_svg(img_name: str, **colors: tuple[str, str]) -> rx.Component:
     return rx.html(
         rx.color_mode_cond(replace_colors(svg_logo, 0), replace_colors(svg_logo, 1))
     )
-
-
-# 8E408E
