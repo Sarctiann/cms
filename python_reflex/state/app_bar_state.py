@@ -1,6 +1,6 @@
 import reflex as rx
 
-from ..utils.types import Content, AppBarImg
+from ..utils.types import Content
 from ._base_state import BaseState
 
 __all__ = ["AppBarState"]

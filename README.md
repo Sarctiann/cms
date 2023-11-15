@@ -49,11 +49,14 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 
 ## Related Tools
 
+- python3.11.6
+- [dependencies](requirements.txt)
+
 - VSCode Extensions:
-  - Python
-  - Pylance
-  - Black Formatter
-  - isort
+  - ms-python.python
+  - ms-python.vscode-pylance
+  - ms-python.black-formatte
+  - ms-python.isort
 
 ## To run this:
 
