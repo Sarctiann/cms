@@ -2,8 +2,8 @@ from typing import Callable
 
 import reflex as rx
 
-from .index import *
-from .content_file_error import *
+from .index_page import *
+from .content_file_error_page import *
 
 __all__ = ["get_pages"]
 

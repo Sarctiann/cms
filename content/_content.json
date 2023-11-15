@@ -2,7 +2,7 @@
   "app_bar_img": {
     "svg_name": "devlights_logo",
     "colors": {
-      "color1": ["#8E408E", "#8E408E"],
+      "color1": ["#1E9FAF", "#8E408E"],
       "color2": ["#1E1F1D", "#FEFFFD"]
     }
   },

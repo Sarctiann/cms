@@ -8,7 +8,6 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 
 - create home page md and replace index page
 - create components to render with markdown
-- unharcode logo in layout and SectionState (needs a lot of work... I must change the logic)
 
 ---
 

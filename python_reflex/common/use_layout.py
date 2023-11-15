@@ -2,8 +2,7 @@ from functools import wraps
 
 import reflex as rx
 
-from ..state.app import AppState
-from ..state.sections import SectionState
+from ..state import AppBarState, SectionsState
 
 __all__ = ["use_layout"]
 
@@ -20,19 +19,25 @@ def use_layout():
         def with_layout(*args, **kwargs) -> rx.Component:
             return rx.vstack(
                 rx.hstack(
+                    rx.html(
+                        rx.color_mode_cond(
+                            AppBarState.themed_svg_light,
+                            AppBarState.themed_svg_dark,
+                        )
+                    ),
                     rx.spacer(),
-                    AppState.app_bar_img,
                     rx.tabs(
                         rx.tab_list(
                             rx.foreach(
-                                SectionState.tab_labels,
+                                SectionsState.tab_labels,
                                 lambda tab_label: rx.tab(
                                     tab_label,
                                     style=tab_style,
                                 ),
                             )
                         ),
-                        variant="enclosed",
+                        variant="line",
+                        color_scheme="cyan",
                     ),
                     rx.color_mode_button(rx.color_mode_icon(), float="right"),
                     id="nav_bar",
@@ -70,7 +75,7 @@ nav_bar_style = dict(
 )
 
 tab_style = dict(
-    font_size="18px",
+    font_size="16px",
     font_weight="bold",
     min_width="max-content",
 )

@@ -1,12 +1,12 @@
 import reflex as rx
 
-from ..utils.types import Section, Content
+from ..utils.types import Section
 from ._base_state import BaseState
 
-__all__ = ["SectionState"]
+__all__ = ["SectionsState"]
 
 
-class SectionState(BaseState):
+class SectionsState(BaseState):
     """The sections state."""
 
     @rx.var
