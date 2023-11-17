@@ -9,7 +9,7 @@ __all__ = ["index"]
 def index() -> rx.Component:
     return rx.fragment(
         rx.heading(
-            "Devlights",
+            "My hardcoded index page",
             style=header_style,
         ),
     )
