@@ -3,7 +3,7 @@ from typing import cast
 import reflex as rx
 
 from ..utils import file_to_json
-from ..utils.types import Content
+from ..utils.typing import Content
 
 __all__ = ["BaseState"]
 

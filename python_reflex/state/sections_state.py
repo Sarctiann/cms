@@ -1,6 +1,6 @@
 import reflex as rx
 
-from ..utils.types import Section
+from ..utils.typing import Section
 from ._base_state import BaseState
 
 __all__ = ["SectionsState"]

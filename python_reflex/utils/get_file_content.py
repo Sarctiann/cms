@@ -8,8 +8,6 @@ Content:
 
 import json
 
-from .types import Content
-
 
 def file_to_str(file_path) -> str:
     """Reads a file and returns the contents as a string."""
