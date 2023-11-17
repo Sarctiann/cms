@@ -6,36 +6,37 @@
       "color2": ["#1E1F1D", "#FEFFFD"]
     }
   },
+  "default_lang": "es",
   "sections": [
     {
-      "tab_label": "Home",
+      "page_title": "Home",
       "page_route": "home",
-      "markdown_file_en": "home_en.md",
-      "markdown_file_es": "home_es.md"
+      "md_file_en": "home_en.md",
+      "md_file_es": "home_es.md"
     },
     {
-      "tab_label": "About Us",
+      "page_title": "About Us",
       "page_route": "about-us",
-      "markdown_file_en": "aboutUs_en.md",
-      "markdown_file_es": "aboutUs_es.md"
+      "md_file_en": "aboutUs_en.md",
+      "md_file_es": "aboutUs_es.md"
     },
     {
-      "tab_label": "Services",
+      "page_title": "Services",
       "page_route": "services",
-      "markdown_file_en": "services_en.md",
-      "markdown_file_es": "services_es.md"
+      "md_file_en": "services_en.md",
+      "md_file_es": "services_es.md"
     },
     {
-      "tab_label": "Clients",
+      "page_title": "Clients",
       "page_route": "clients",
-      "markdown_file_en": "clients_en.md",
-      "markdown_file_es": "clients_es.md"
+      "md_file_en": "clients_en.md",
+      "md_file_es": "clients_es.md"
     },
     {
-      "tab_label": "Contact Us",
+      "page_title": "Contact Us",
       "page_route": "contact-us",
-      "markdown_file_en": "contactUs_en.md",
-      "markdown_file_es": "contactUs_es.md"
+      "md_file_en": "contactUs_en.md",
+      "md_file_es": "contactUs_es.md"
     }
   ]
 }

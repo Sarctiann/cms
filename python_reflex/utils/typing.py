@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import Literal, TypedDict
 
 
 class AppBarImg(TypedDict):
@@ -7,12 +7,13 @@ class AppBarImg(TypedDict):
 
 
 class Section(TypedDict):
-    tab_label: str
+    page_title: str
     page_route: str
-    markdown_file_en: str
-    markdown_file_es: str
+    md_file_en: str
+    md_file_es: str
 
 
 class Content(TypedDict):
     app_bar_img: AppBarImg
+    default_lang: Literal["en", "es"]
     sections: list[Section]

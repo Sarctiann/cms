@@ -1,4 +1,4 @@
-from typing import cast
+from typing import Literal, cast
 
 import reflex as rx
 
@@ -14,6 +14,8 @@ class BaseState(rx.State):
     Due only one state being allowed per component, this is a workaround.
     """
 
+    language: Literal["en", "es"]
+
     @rx.var
     def content(self) -> Content | None:
         try:
@@ -21,10 +23,15 @@ class BaseState(rx.State):
         except:
             print('Something went wrong traying to load the "_content.json" file')
 
+    @rx.var
+    def get_initial_language(self):
+        return self.content.get("default_lang", "en")
+
     def on_mount(self) -> rx.event.EventSpec | None:
         """Reload the content state."""
         try:
             redirect = rx.redirect(self.content["sections"][0]["page_route"])
+            self.language = self.content.get("default_lang", "en")
             print(f'redirecting to "{self.content["sections"][0]["page_route"]}"')
             return redirect
 

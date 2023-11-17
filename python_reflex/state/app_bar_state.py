@@ -27,6 +27,9 @@ class AppBarState(BaseState):
 
         return svg_logo
 
+    def toggle_language(self) -> None:
+        self.language = "en" if self.language == "es" else "es"
+
     def __get_name_and_colors(
         self, cnt: Content
     ) -> tuple[str, dict[str, tuple[str, str]]]:

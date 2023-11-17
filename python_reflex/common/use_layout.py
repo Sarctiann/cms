@@ -1,4 +1,6 @@
+from cgitb import text
 from functools import wraps
+from click import style
 
 import reflex as rx
 
@@ -29,7 +31,7 @@ def use_layout():
                     rx.tabs(
                         rx.tab_list(
                             rx.foreach(
-                                SectionsState.tab_labels,
+                                SectionsState.page_titles,
                                 lambda tab_label: rx.tab(
                                     tab_label,
                                     style=tab_style,
@@ -38,6 +40,12 @@ def use_layout():
                         ),
                         variant="line",
                         color_scheme="cyan",
+                    ),
+                    rx.button(
+                        rx.icon(tag="repeat"),
+                        AppBarState.language,
+                        on_click=AppBarState.toggle_language,
+                        style=lang_btn,
                     ),
                     rx.color_mode_button(rx.color_mode_icon(), float="right"),
                     id="nav_bar",
@@ -79,6 +87,8 @@ tab_style = dict(
     font_weight="bold",
     min_width="max-content",
 )
+
+lang_btn = dict(display="flex", gap="5px", text_transform="uppercase", min_width="5em")
 
 content_style = dict(
     margin_top="0em !important",

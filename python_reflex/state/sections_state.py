@@ -14,10 +14,10 @@ class SectionsState(BaseState):
         if self.content:
             new_sections: list[Section] = [
                 Section(
-                    tab_label=s.get("tab_label", ""),
+                    page_title=s.get("page_title", ""),
                     page_route=s.get("page_route", ""),
-                    markdown_file_en=s.get("markdown_file_en", ""),
-                    markdown_file_es=s.get("markdown_file_es", ""),
+                    md_file_en=s.get("md_file_en", ""),
+                    md_file_es=s.get("md_file_es", ""),
                 )
                 for s in self.content.get("sections")
                 if all(attr in s for attr in s.keys())
@@ -25,5 +25,5 @@ class SectionsState(BaseState):
             return new_sections
 
     @rx.var
-    def tab_labels(self) -> list[str]:
-        return [s["tab_label"] for s in self.sections or []]
+    def page_titles(self) -> list[str]:
+        return [s["page_title"] for s in self.sections or []]

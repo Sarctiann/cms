@@ -28,12 +28,13 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
       // more colors ...
     ]
   },
+  "default_lang": "initial_language",
   "sections": [
     {
-      "tab_label": "Home",
+      "page_title": "Home",
       "page_route": "home",
-      "markdown_file_en": "home_en.md",
-      "markdown_file_es": "home_es.md"
+      "md_file_en": "home_en.md",
+      "md_file_es": "home_es.md"
     }
     //  more pages ...
     // "index" page_route ( `"/"` ) is reserved for initialization porposes
