@@ -12,6 +12,15 @@ def index() -> rx.Component:
             "My hardcoded index page",
             style=header_style,
         ),
+        rx.markdown(
+            """
+            ### TODO:
+
+            - test markdown
+            - create components to render markdown
+            - write a home_en and a home_es page
+            """
+        ),
     )
 
 
