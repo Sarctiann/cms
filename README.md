@@ -41,7 +41,7 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 }
 ```
 
-- "index" route ( `"/"` ) is reserved for initialization porposes
+- "index" route ( `"/"` ) is reserved for initialization purposes
 
 ---
 
@@ -55,21 +55,21 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 - VSCode Extensions:
   - ms-python.python
   - ms-python.vscode-pylance
-  - ms-python.black-formatte
+  - ms-python.black-formatter
   - ms-python.isort
 
 ## To run this:
 
 > Mac | Linux
 
-- `python3 -m venv venv`
+- `python3 -m venv .venv`
 - `source .venv/bin/activate`
 - `pip install -r requirements.txt`
 - `reflex run`
 
 > Windows
 
-- `py -3.11 -m venv venv`
+- `py -3.11 -m venv .venv`
 - `.venv\Scripts\activate`
 - `pip install -r requirements.txt`
 - `reflex run`

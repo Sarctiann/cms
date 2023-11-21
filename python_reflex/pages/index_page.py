@@ -15,6 +15,8 @@ def home() -> rx.Component:
 
             ##### TODO: Add support for the missing extended markdown elements
 
+            ---
+
             Heading	
             
                 # H1
@@ -30,21 +32,29 @@ def home() -> rx.Component:
             ##### H5
             ###### H6
 
+            ---
+
             Bold
             
                 **bold text**
             **bold text**
             
+            ---
+
             Italic	
             
                 *italicized text*
             *italicized text*
             
+            ---
+
             Blockquote	
             
                 > blockquote
             > blockquote
-            
+
+            ---
+
             Ordered List	
             
                 1. First item
@@ -53,7 +63,9 @@ def home() -> rx.Component:
             1. First item
             2. Second item
             3. Third item
-            
+
+            ---
+
             Unordered List
             
                 - First item
@@ -63,37 +75,49 @@ def home() -> rx.Component:
             - Second item
             - Third item
 
+            ---
+
             Code
 
                 `code`
             `code`
+
+            ---
 
             Horizontal Rule
             
                 ---
 
             ---
+            
+            ---
 
             Link	
                 
                 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
             [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+
+            ---
             
             Image	
             
                 ![Atlantic Workshop](/roundAW.png)
             ![Atlantic Workshop](/roundAW.png)
 
+            ---
+
             Table	
             
                 | Syntax | Description |
-                | :- | -: |
+                | :-: | :-: |
                 | Header | Title |
                 | Paragraph | Text |
             | Syntax | Description |
-            | :- | -: |
+            | :-: | :-: |
             | Header | Title |
             | Paragraph | Text |
+
+            ---
 
             Fenced Code Block
             
@@ -112,6 +136,8 @@ def home() -> rx.Component:
             }
             ```
 
+            ---
+
             Footnote
 
                 Here's a sentence with a footnote. [^1]
@@ -119,11 +145,14 @@ def home() -> rx.Component:
             Here's a sentence with a footnote. [^1]
             [^1]: This is the footnote.
 
+            ---
             
             Strikethrough	
             
                 ~The world is flat.~
             ~The world is flat.~
+
+            ---
             
             Task List	
             
@@ -133,6 +162,8 @@ def home() -> rx.Component:
             - [x] Write the press release
             - [ ] Update the website
             - [ ] Contact the media
+
+            ---
 
             """,
             component_map=component_map,
