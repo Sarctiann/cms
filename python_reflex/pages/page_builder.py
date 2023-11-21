@@ -9,4 +9,4 @@ __all__ = ["get_pages"]
 
 
 def get_pages() -> list[tuple[Callable[[], rx.Component], str | None]]:
-    return [(content_file_error, "content_file_error"), (index, "home")]
+    return [(content_file_error, "content_file_error"), (home, "home")]

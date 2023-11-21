@@ -4,18 +4,17 @@ from click import style
 from ..components import component_map
 from .use_layout import use_layout
 
-__all__ = ["index"]
+__all__ = ["home"]
 
 
 @use_layout()
-def index() -> rx.Component:
+def home() -> rx.Component:
     return rx.fragment(
-        rx.heading(
-            "My hardcoded index page",
-            style=header_style,
-        ),
         rx.markdown(
             """
+
+            ##### TODO: Add support for the missing extended markdown elements
+
             Heading	
             
                 # H1
@@ -139,6 +138,3 @@ def index() -> rx.Component:
             component_map=component_map,
         ),
     )
-
-
-header_style = dict(font_size="4em", margin_top="1em")
