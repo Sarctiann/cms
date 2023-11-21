@@ -7,7 +7,6 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 ## TODO | In Progress:
 
 - create home page md and replace index page
-- create components to render with markdown
 
 ---
 

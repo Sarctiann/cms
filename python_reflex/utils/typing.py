@@ -1,4 +1,6 @@
-from typing import Literal, TypedDict
+from typing import Callable, Literal, TypedDict
+
+import reflex as rx
 
 
 class AppBarImg(TypedDict):
@@ -17,3 +19,6 @@ class Content(TypedDict):
     app_bar_img: AppBarImg
     default_lang: Literal["en", "es"]
     sections: list[Section]
+
+
+ComponentMap = dict[str, Callable[..., rx.Component]]
