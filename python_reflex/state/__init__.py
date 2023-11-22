@@ -2,7 +2,7 @@ import reflex as rx
 
 from ._base_state import BaseState
 from .app_bar_state import *
-from .sections_state import *
+from .pages_state import *
 
 
 def __init_state() -> rx.Component:

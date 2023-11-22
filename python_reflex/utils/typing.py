@@ -8,7 +8,7 @@ class AppBarImg(TypedDict):
     colors: dict[str, tuple[str, str]]
 
 
-class Section(TypedDict):
+class Page(TypedDict):
     page_title: str
     page_route: str
     md_file_en: str
@@ -18,7 +18,7 @@ class Section(TypedDict):
 class Content(TypedDict):
     app_bar_img: AppBarImg
     default_lang: Literal["en", "es"]
-    sections: list[Section]
+    pages: list[Page]
 
 
 ComponentMap = dict[str, Callable[..., rx.Component]]

@@ -7,7 +7,7 @@
     }
   },
   "default_lang": "es",
-  "sections": [
+  "pages": [
     {
       "page_title": "Home",
       "page_route": "home",
@@ -15,28 +15,10 @@
       "md_file_es": "home_es.md"
     },
     {
-      "page_title": "About Us",
-      "page_route": "about-us",
-      "md_file_en": "aboutUs_en.md",
-      "md_file_es": "aboutUs_es.md"
-    },
-    {
-      "page_title": "Services",
-      "page_route": "services",
-      "md_file_en": "services_en.md",
-      "md_file_es": "services_es.md"
-    },
-    {
-      "page_title": "Clients",
-      "page_route": "clients",
-      "md_file_en": "clients_en.md",
-      "md_file_es": "clients_es.md"
-    },
-    {
-      "page_title": "Contact Us",
-      "page_route": "contact-us",
-      "md_file_en": "contactUs_en.md",
-      "md_file_es": "contactUs_es.md"
+      "page_title": "Markdown Cheat Sheet",
+      "page_route": "markdown-cheat-sheet",
+      "md_file_en": "markdownCheatSheet_en.md",
+      "md_file_es": "markdownCheatSheet_es.md"
     }
   ]
 }

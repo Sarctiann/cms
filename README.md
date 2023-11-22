@@ -1,4 +1,4 @@
-# python-reflex CMS
+# Markdown CMS
 
 #### This is a [Reflex](https://reflex.dev/)'s proof of concept
 
@@ -28,7 +28,7 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
     ]
   },
   "default_lang": "initial_language",
-  "sections": [
+  "pages": [
     {
       "page_title": "Home",
       "page_route": "home",

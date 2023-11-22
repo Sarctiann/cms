@@ -1,10 +1,9 @@
-from cgitb import text
 from functools import wraps
-from click import style
+from typing import Literal, cast
 
 import reflex as rx
 
-from ..state import AppBarState, SectionsState
+from ..state import AppBarState, PagesState
 
 __all__ = ["use_layout"]
 
@@ -28,18 +27,18 @@ def use_layout():
                         )
                     ),
                     rx.spacer(),
-                    rx.tabs(
-                        rx.tab_list(
-                            rx.foreach(
-                                SectionsState.page_titles,
-                                lambda tab_label: rx.tab(
-                                    tab_label,
-                                    style=tab_style,
-                                ),
-                            )
+                    rx.foreach(
+                        PagesState.page_tabs,
+                        lambda page: rx.fragment(
+                            rx.button(
+                                page[0],
+                                on_click=rx.redirect(page[1]),
+                                variant=tab_variant(page[2]),
+                                color_scheme=tab_color_scheme(page[2]),
+                                style=tab_style,
+                            ),
+                            rx.divider(orientation="vertical"),
                         ),
-                        variant="line",
-                        color_scheme="cyan",
                     ),
                     rx.button(
                         rx.icon(tag="repeat"),
@@ -47,7 +46,7 @@ def use_layout():
                         on_click=AppBarState.toggle_language,
                         style=lang_btn,
                     ),
-                    rx.color_mode_button(rx.color_mode_icon(), float="right"),
+                    rx.color_mode_button(rx.color_mode_icon()),
                     id="nav_bar",
                     style=nav_bar_style,
                 ),
@@ -82,11 +81,26 @@ nav_bar_style = dict(
     ),
 )
 
+
 tab_style = dict(
     font_size="16px",
     font_weight="bold",
     min_width="max-content",
 )
+
+
+def tab_color_scheme(selected):
+    return cast(
+        Literal["telegram"] | None,
+        rx.cond(selected == "True", "telegram", ""),
+    )
+
+
+def tab_variant(selected):
+    return cast(
+        Literal["ghost", "outline"], rx.cond(selected == "True", "outline", "ghost")
+    )
+
 
 lang_btn = dict(display="flex", gap="5px", text_transform="uppercase", min_width="5em")
 
