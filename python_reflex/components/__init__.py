@@ -1,12 +1,13 @@
 from ..utils.typing import ComponentMap
-from .codeblock import codeblock
-from .divider import divider
-from .image import image
-from .table import table
+from .codeblock import *
+from .divider import *
+from .image import *
+from .table import *
 
-__all__ = ["component_map"]
+__all__ = ["component_map_light", "component_map_dark"]
 
 
-component_map: ComponentMap = dict(
-    **table, hr=divider, br=divider, img=image, codeblock=codeblock
-)
+component_map: ComponentMap = dict(**table, hr=divider, br=divider, img=image)
+
+component_map_light: ComponentMap = dict(**component_map, codeblock=codeblock_light)
+component_map_dark: ComponentMap = dict(**component_map, codeblock=codeblock_dark)

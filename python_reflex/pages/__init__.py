@@ -1,6 +1,6 @@
 import reflex as rx
 
-from ..components import component_map
+from ..components import *
 
 from ..pages.use_layout import use_layout
 from .content_file_error_page import content_file_error
@@ -16,9 +16,15 @@ def init_pages(app: rx.App) -> None:
     @use_layout()
     def _() -> rx.Component:
         return rx.container(
-            rx.markdown(
-                PagesState.page_content,
-                component_map=component_map,
+            rx.color_mode_cond(
+                rx.markdown(
+                    PagesState.page_content,
+                    component_map=component_map_light,
+                ),
+                rx.markdown(
+                    PagesState.page_content,
+                    component_map=component_map_dark,
+                ),
             ),
             style=container_style,
         )
