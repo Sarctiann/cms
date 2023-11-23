@@ -3,12 +3,12 @@ import reflex as rx
 from ..utils.typing import ComponentMap
 
 table: ComponentMap = dict(
-    table=lambda *args, **kwargs: rx.table(*args, style=table_style, **kwargs),
-    thead=lambda *args, **kwargs: rx.thead(*args, style=thead_style, **kwargs),
-    tbody=lambda *args, **kwargs: rx.tbody(*args, style=tbody_style, **kwargs),
-    tr=lambda *args, **kwargs: rx.tr(*args, **kwargs),
-    th=lambda *args, **kwargs: rx.th(*args, style=th_style, **kwargs),
-    td=lambda *args, **kwargs: rx.td(*args, style=td_style, **kwargs),
+    table=lambda *children, **props: rx.table(*children, style=table_style, **props),
+    thead=lambda *children, **props: rx.thead(*children, style=thead_style, **props),
+    tbody=lambda *children, **props: rx.tbody(*children, style=tbody_style, **props),
+    tr=lambda *children, **props: rx.tr(*children, **props),
+    th=lambda *children, **props: rx.th(*children, style=th_style, **props),
+    td=lambda *children, **props: rx.td(*children, style=td_style, **props),
 )
 
 

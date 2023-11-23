@@ -4,12 +4,6 @@
 
 The goal is to create a CMS, with a simple and intuitive interface, that allows the Devlights team to maintain the landing website without having to write a single line of code.
 
-## TODO | In Progress:
-
-- create home page md and replace index page
-
----
-
 ---
 
 ## API Reference:
