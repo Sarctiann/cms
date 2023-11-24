@@ -50,7 +50,11 @@ def use_layout():
                     id="nav_bar",
                     style=nav_bar_style,
                 ),
-                rx.vstack(children(*args, **kwargs), id="content", style=content_style),
+                rx.vstack(
+                    children(*args, **kwargs),
+                    id="content",
+                    style=content_style,
+                ),
                 id="layout_container",
                 style=container_style,
             )
@@ -98,11 +102,21 @@ def tab_color_scheme(selected):
 
 def tab_variant(selected):
     return cast(
-        Literal["ghost", "outline"], rx.cond(selected == "True", "outline", "ghost")
+        Literal["ghost", "outline"],
+        rx.cond(
+            selected == "True",
+            "outline",
+            "ghost",
+        ),
     )
 
 
-lang_btn = dict(display="flex", gap="5px", text_transform="uppercase", min_width="5em")
+lang_btn = dict(
+    display="flex",
+    gap="5px",
+    text_transform="uppercase",
+    min_width="5em",
+)
 
 content_style = dict(
     margin_top="0em !important",

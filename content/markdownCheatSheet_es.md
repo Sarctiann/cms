@@ -149,7 +149,7 @@ Here's a sentence with a footnote. [^1]
 
 ---
 
-Tachado
+Texto Tachado
 
     ~The world is flat.~
 

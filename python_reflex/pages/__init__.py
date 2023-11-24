@@ -26,6 +26,7 @@ def init_pages(app: rx.App) -> None:
                     component_map=component_map_dark,
                 ),
             ),
+            rx.box(style=box_style),
             style=container_style,
         )
 
@@ -33,4 +34,9 @@ def init_pages(app: rx.App) -> None:
 container_style = dict(
     padding="1rem",
     max_width="90vw",
+    max_height="100vh",
+)
+
+box_style = dict(
+    height="10vh",
 )

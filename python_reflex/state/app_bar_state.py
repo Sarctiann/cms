@@ -37,5 +37,7 @@ class AppBarState(BaseState):
         name = logo.get("svg_name")
         colors = logo.get("colors")
         for c in colors.values():
-            assert len(c) % 2 == 0, ValueError("The length of the colors must be even.")
+            assert len(c) % 2 == 0, ValueError(
+                "The length of the colors must be even.",
+            )
         return (name, colors)
