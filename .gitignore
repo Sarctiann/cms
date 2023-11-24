@@ -1,8 +1,7 @@
 *.db
 *.py[cod]
-.web
-__pycache__/
-
+.idea/
 .venv/
 .vscode/
-.idea/
+.web
+__pycache__/
