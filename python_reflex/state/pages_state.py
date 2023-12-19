@@ -17,8 +17,7 @@ class PagesState(BaseState):
                 Page(
                     page_title=s.get("page_title", ""),
                     page_route=s.get("page_route", ""),
-                    md_file_en=s.get("md_file_en", ""),
-                    md_file_es=s.get("md_file_es", ""),
+                    md_file=s.get("md_file", ""),
                 )
                 for s in self.content.get("pages")
                 if all(attr in s for attr in s.keys())
@@ -34,12 +33,8 @@ class PagesState(BaseState):
         ]
 
     @rx.var
-    def en_md_files(self) -> list[str]:
-        return [s["md_file_en"] for s in self.pages or []]
-
-    @rx.var
-    def es_md_files(self) -> list[str]:
-        return [s["md_file_es"] for s in self.pages or []]
+    def md_files(self) -> list[str]:
+        return [s["md_file"] for s in self.pages or []]
 
     @rx.var
     def current_page_index(self) -> int | None:
@@ -53,6 +48,5 @@ class PagesState(BaseState):
     def page_content(self) -> str:
         if (index := self.current_page_index) is None:
             return ""
-        pages = self.en_md_files if self.language == "en" else self.es_md_files
-        content = file_to_str(f"content/{pages[index]}")
+        content = file_to_str(f"content/{self.md_files[index]}_{self.language}.md")
         return content

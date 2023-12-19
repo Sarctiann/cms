@@ -11,14 +11,13 @@
     {
       "page_title": "Home",
       "page_route": "home",
-      "md_file_en": "home_en.md",
-      "md_file_es": "home_es.md"
+      "md_file": "home"
     },
     {
       "page_title": "Markdown Cheat Sheet",
       "page_route": "markdown-cheat-sheet",
-      "md_file_en": "markdownCheatSheet_en.md",
-      "md_file_es": "markdownCheatSheet_es.md"
+      "md_file": "markdownCheatSheet"
     }
-  ]
+  ],
+  "forms": ["contact_form"]
 }

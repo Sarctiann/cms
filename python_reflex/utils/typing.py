@@ -11,8 +11,7 @@ class AppBarImg(TypedDict):
 class Page(TypedDict):
     page_title: str
     page_route: str
-    md_file_en: str
-    md_file_es: str
+    md_file: str
 
 
 class Content(TypedDict):

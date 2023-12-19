@@ -1,0 +1,31 @@
+{
+  "handler": "handle_contact",
+  "fields": [
+    {
+      "name": "name",
+      "type": "text",
+      "label": "Nombre",
+      "placeholder": "Tu name",
+      "required": true
+    },
+    {
+      "name": "email",
+      "type": "email",
+      "label": "Email",
+      "placeholder": "Tu email",
+      "required": true
+    },
+    {
+      "name": "message",
+      "type": "textarea",
+      "label": "Mensaje",
+      "placeholder": "Tu mensaje",
+      "required": true
+    },
+    {
+      "name": "send",
+      "type": "button",
+      "label": "Enviar"
+    }
+  ]
+}
