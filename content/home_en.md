@@ -2,7 +2,7 @@
 
 #### This is a [Reflex](https://reflex.dev/)'s proof of concept
 
-The goal is to create a CMS, with a simple and intuitive interface, that allows the Devlights team to maintain the landing website without having to write a single line of code.
+The goal is to create a CMS, with a simple and intuitive interface that allows the user to maintain a content site without having to write a single line of code.
 
 ---
 
@@ -26,8 +26,8 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
     {
       "page_title": "Home",
       "page_route": "home",
-      "md_file_en": "home_en.md",
-      "md_file_es": "home_es.md"
+      "md_file": "home"
+      // IMPORTANT: This requires a home_en.md and a home_es.md files
     }
     //  more pages ...
     // "index" page_route ( `"/"` ) is reserved for initialization porposes
@@ -35,22 +35,12 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 }
 ```
 
+- As stated above each `md_file` requires two files,
+  one with `_en.md` ending and another with `_es.md` ending
+
 - "index" route ( `"/"` ) is reserved for initialization purposes
 
 ---
-
----
-
-## Related Tools
-
-- python3.11.6
-- [dependencies](requirements.txt)
-
-- VSCode Extensions:
-  - ms-python.python
-  - ms-python.vscode-pylance
-  - ms-python.black-formatter
-  - ms-python.isort
 
 ## To run this:
 

@@ -18,7 +18,7 @@ El objetivo es crear un CMS, con una simple e intuitiva interfaz que le permita 
       {
         "custom_color_id": ["light_mode_color", "dark_mode_color"]
       }
-      // more colors ...
+      // mas colores ...
     ]
   },
   "default_lang": "initial_language",
@@ -26,31 +26,21 @@ El objetivo es crear un CMS, con una simple e intuitiva interfaz que le permita 
     {
       "page_title": "Home",
       "page_route": "home",
-      "md_file_en": "home_en.md",
-      "md_file_es": "home_es.md"
+      // IMPORTANT: This requires a home_en.md and a home_es.md files
+      "md_file": "home"
     }
-    //  more pages ...
-    // "index" page_route ( `"/"` ) is reserved for initialization porposes
+    //  mas paginas ...
+    // "index" page_route ( `"/"` ) está reservado para propósitos de inicialización
   ]
 }
 ```
 
+- Como se aclara arriba cada `md_file` requiere dos archivos,
+  uno con terminación `_en.md` y otro con terminación `_es.md`
+
 - La ruta "index" ( `"/"` ) está reservada para propósitos de inicialización
 
 ---
-
----
-
-## Herramientas relacionadas
-
-- python3.11.6
-- [dependencias](requirements.txt)
-
-- Extensiones de VSCode:
-  - ms-python.python
-  - ms-python.vscode-pylance
-  - ms-python.black-formatter
-  - ms-python.isort
 
 ## Para correr el proyecto:
 

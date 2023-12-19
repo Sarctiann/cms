@@ -2,7 +2,7 @@
 
 #### This is a [Reflex](https://reflex.dev/)'s proof of concept
 
-The goal is to create a CMS, with a simple and intuitive interface, that allows the Devlights team to maintain the landing website without having to write a single line of code.
+The goal is to create a CMS, with a simple and intuitive interface that allows the user to maintain a content site without having to write a single line of code.
 
 ## TODO | In Progress:
 
@@ -12,40 +12,7 @@ The goal is to create a CMS, with a simple and intuitive interface, that allows 
 
 ---
 
-## API Reference:
-
-- `_content.json` file structure:
-
-```jsonc
-{
-  "app_bar_img": {
-    "svg_name": "the_svg_name",
-    "colors": [
-      {
-        "custom_color_id": ["light_mode_color", "dark_mode_color"]
-      }
-      // more colors ...
-    ]
-  },
-  "default_lang": "initial_language",
-  "pages": [
-    {
-      "page_title": "Home",
-      "page_route": "home",
-      "md_file_en": "home_en.md",
-      "md_file_es": "home_es.md"
-    }
-    //  more pages ...
-    // "index" page_route ( `"/"` ) is reserved for initialization porposes
-  ]
-}
-```
-
-- "index" route ( `"/"` ) is reserved for initialization purposes
-
----
-
----
+### The initial project contains an API reference to help you get started.
 
 ## Related Tools
 
