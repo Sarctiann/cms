@@ -12,15 +12,12 @@ The goal is to create a CMS, with a simple and intuitive interface that allows t
   - Forms representation with rx components
   - Forms tags replacement in the .md files
   - Resolve .json structure
-
-- implement API files:
-
-  - ApiState
-  - load handlers dynamically from the api_files
+  - Add Form typing
 
 - update the API Reference in the home en/es pages:
 
   - Add `content` folder structure
+  - Add forms structure
 
 ---
 

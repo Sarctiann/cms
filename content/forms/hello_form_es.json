@@ -1,5 +1,5 @@
 {
-  "handler": "handle_contact",
+  "handler": "hello",
   "fields": [
     {
       "name": "name",
