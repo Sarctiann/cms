@@ -6,6 +6,10 @@ The goal is to create a CMS, with a simple and intuitive interface that allows t
 
 ---
 
+<hello_form />
+
+{{greeting}}
+
 ## API Reference:
 
 - `_content.json` file structure:

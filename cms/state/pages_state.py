@@ -3,6 +3,7 @@ import reflex as rx
 from ..utils.get_file_content import file_to_str
 from ..utils.typing import Page
 from ._base_state import BaseState
+from ..content.handler import FormHandlerState
 
 __all__ = ["PagesState"]
 
@@ -49,6 +50,6 @@ class PagesState(BaseState):
         if (index := self.current_page_index) is None:
             return ""
         content = file_to_str(
-            f"content/pages/{self.md_files[index]}_{self.language}.md"
+            f"cms/content/pages/{self.md_files[index]}_{self.language}.md"
         )
         return content
