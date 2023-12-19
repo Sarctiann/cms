@@ -31,12 +31,21 @@ The goal is to create a CMS, with a simple and intuitive interface that allows t
     }
     //  more pages ...
     // "index" page_route ( `"/"` ) is reserved for initialization porposes
+  ],
+  "forms": [
+    "some_form_file"
+    // more forms files...
+  ],
+  "api_files": [
+    "some_api_file"
+    // more api files...
   ]
 }
 ```
 
 - As stated above each `md_file` requires two files,
-  one with `_en.md` ending and another with `_es.md` ending
+  one with `_en.md` ending and another with `_es.md` ending,
+  the same applies to form files but with `.json` instead of `.md`.
 
 - "index" route ( `"/"` ) is reserved for initialization purposes
 

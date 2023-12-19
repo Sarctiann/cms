@@ -48,5 +48,7 @@ class PagesState(BaseState):
     def page_content(self) -> str:
         if (index := self.current_page_index) is None:
             return ""
-        content = file_to_str(f"content/{self.md_files[index]}_{self.language}.md")
+        content = file_to_str(
+            f"content/pages/{self.md_files[index]}_{self.language}.md"
+        )
         return content

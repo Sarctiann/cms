@@ -18,6 +18,8 @@ class Content(TypedDict):
     app_bar_img: AppBarImg
     default_lang: Literal["en", "es"]
     pages: list[Page]
+    forms: list[str]
+    api_files: list[str]
 
 
 ComponentMap = dict[str, Callable[..., rx.Component]]

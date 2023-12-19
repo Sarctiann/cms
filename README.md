@@ -6,7 +6,21 @@ The goal is to create a CMS, with a simple and intuitive interface that allows t
 
 ## TODO | In Progress:
 
-- create home page md and replace index page
+- implement Forms:
+
+  - FormState
+  - Forms representation with rx components
+  - Forms tags replacement in the .md files
+  - Resolve .json structure
+
+- implement API files:
+
+  - ApiState
+  - load handlers dynamically from the api_files
+
+- update the API Reference in the home en/es pages:
+
+  - Add `content` folder structure
 
 ---
 

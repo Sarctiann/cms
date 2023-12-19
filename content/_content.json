@@ -19,5 +19,6 @@
       "md_file": "markdownCheatSheet"
     }
   ],
-  "forms": ["contact_form"]
+  "forms": ["hello_form"],
+  "api_files": ["hello_api"]
 }

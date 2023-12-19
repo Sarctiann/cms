@@ -1,0 +1,17 @@
+{
+  "endpoint": "handle_contact",
+  "fields": [
+    {
+      "name": "name",
+      "type": "text",
+      "label": "Name",
+      "placeholder": "Your name",
+      "required": true
+    },
+    {
+      "name": "send",
+      "type": "button",
+      "label": "Send"
+    }
+  ]
+}
