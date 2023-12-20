@@ -17,6 +17,11 @@
       "page_title": "Markdown Cheat Sheet",
       "page_route": "markdown-cheat-sheet",
       "md_file": "markdownCheatSheet"
+    },
+    {
+      "page_title": "Form Example",
+      "page_route": "form-example",
+      "md_file": "form_example"
     }
   ],
   "forms": ["hello_form"]
