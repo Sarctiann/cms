@@ -19,7 +19,7 @@ class BaseState(rx.State):
     @rx.var
     def content(self) -> Content | None:
         try:
-            return cast(Content, file_to_json("cms/content/_content.json"))
+            return cast(Content, file_to_json("content/_content.json"))
         except Exception as e:
             print('Something went wrong traying to load the "_content.json" file')
             print(e)
