@@ -2,12 +2,12 @@ from typing import Any
 
 import reflex as rx
 
-from cms.state._base_state import BaseState
+from cms.state.forms_state import FormsBaseState
 
 __all__ = ["FormsHandlerState"]
 
 
-class FormsHandlerState(BaseState):
+class FormsHandlerState(FormsBaseState):
     """
     Here implement the handlers and of the forms and other vars
     """

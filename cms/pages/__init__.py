@@ -16,15 +16,9 @@ def init_pages(app: rx.App) -> None:
     @use_layout()
     def _() -> rx.Component:
         return rx.container(
-            rx.color_mode_cond(
-                rx.markdown(
-                    PagesState.page_content,
-                    component_map=component_map_light,
-                ),
-                rx.markdown(
-                    PagesState.page_content,
-                    component_map=component_map_dark,
-                ),
+            rx.markdown(
+                PagesState.page_content,
+                component_map=component_map,
             ),
             rx.box(style=box_style),
             style=container_style,

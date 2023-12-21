@@ -6,10 +6,6 @@ El objetivo es crear un CMS, con una simple e intuitiva interfaz que le permita 
 
 ---
 
-<hello_form />
-
-{{greeting}}
-
 ## Referencia de la API:
 
 - Estructura del archivo `_content.json`:

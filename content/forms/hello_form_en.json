@@ -1,5 +1,4 @@
 {
-  "handler": "hello",
   "fields": [
     {
       "name": "name",
@@ -11,7 +10,8 @@
     {
       "name": "send",
       "type": "button",
-      "label": "Send"
+      "label": "Send",
+      "handler": "hello"
     }
   ]
 }
