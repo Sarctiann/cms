@@ -1,17 +1,21 @@
 # Formulario de ejemplo
 
-<div style="display: flex; flex-direction: column; width: 100%; justify-content: center; align-items: center;">
-
-_This does not work:_
+_Esto no funciona:_
 
 <hello_form />
 
-_This works:_
+_Esto está en desarrollo:_
+
+<iframe
+  src="http://localhost:3001/markdown-cheat-sheet/"
+  style="width: 100%; min-height: 300px; overflow: hidden;"
+  title='hello_form'
+></iframe>
+
+_Esto Funciona:_
 
 <variable>greeting</variable>
 
-_This works:_
+_Esto Funciona:_
 
 <variable>undeclared_var</variable>
-
-</div>

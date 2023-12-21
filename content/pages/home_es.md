@@ -26,8 +26,8 @@ El objetivo es crear un CMS, con una simple e intuitiva interfaz que le permita 
     {
       "page_title": "Home",
       "page_route": "home",
-      // IMPORTANT: This requires a home_en.md and a home_es.md files
       "md_file": "home"
+      // IMPORTANT: This requires a home_en.md and a home_es.md files
     }
     //  mas paginas ...
     // "index" page_route ( `"/"` ) está reservado para propósitos de inicialización
