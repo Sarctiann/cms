@@ -50,19 +50,3 @@ El objetivo es crear un CMS, con una simple e intuitiva interfaz que le permita 
 - La ruta "index" ( `"/"` ) está reservada para propósitos de inicialización
 
 ---
-
-## Para correr el proyecto:
-
-> Mac | Linux
-
-- `python3 -m venv .venv`
-- `source .venv/bin/activate`
-- `pip install -r requirements.txt`
-- `reflex run`
-
-> Windows
-
-- `py -3.11 -m venv .venv`
-- `.venv\Scripts\activate`
-- `pip install -r requirements.txt`
-- `reflex run`

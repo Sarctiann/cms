@@ -2,6 +2,8 @@ import reflex as rx
 
 from ..utils.typing import ComponentMap
 
+__all__ = ["table"]
+
 table: ComponentMap = dict(
     table=lambda *children, **props: rx.table(*children, style=table_style, **props),
     thead=lambda *children, **props: rx.thead(*children, style=thead_style, **props),
