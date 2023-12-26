@@ -51,4 +51,22 @@ class PagesState(BaseState):
         content = file_to_str(
             f"content/pages/{self.md_files[index]}_{self.language}.md"
         )
+        content = (
+            content.replace(
+                "<jsonform>",
+                "<div><jsonform>",
+            )
+            .replace(
+                "</jsonform>",
+                "</jsonform></div>",
+            )
+            .replace(
+                "<variable>",
+                "<div><variable>",
+            )
+            .replace(
+                "</variable>",
+                "</variable></div>",
+            )
+        )
         return content

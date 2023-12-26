@@ -1,4 +1,3 @@
-from calendar import c
 from typing import cast
 import reflex as rx
 
@@ -18,10 +17,17 @@ def variable(children: str, *args, **kwargs) -> rx.Component:
                 *args,
                 **kwargs,
             ),
-            rx.text(
-                f' "{children}" var does not exist',
-                as_="span",
-                style=error_style,
+            rx.fragment(
+                rx.text(
+                    f' "{children}" var does not exist',
+                    as_="span",
+                    style=error_style,
+                ),
+                rx.text(
+                    f'(declare it in content/handler.py: variables = dict(..., "{children}"="some value")',
+                    as_="span",
+                    style=error_style,
+                ),
                 *args,
                 **kwargs,
             ),
@@ -31,4 +37,5 @@ def variable(children: str, *args, **kwargs) -> rx.Component:
 
 error_style = dict(
     color="red",
+    display="block",
 )

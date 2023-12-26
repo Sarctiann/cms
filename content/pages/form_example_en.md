@@ -6,6 +6,10 @@ _This is in development:_
 
 _This works:_
 
+<jsonform>no_form_file</jsonform>
+
+_This works:_
+
 <jsonform>undeclared_form</jsonform>
 
 _This works:_
