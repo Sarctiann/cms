@@ -1,4 +1,4 @@
-from typing import Callable, Literal, TypedDict
+from typing import Callable, Literal, Optional, TypedDict
 
 import reflex as rx
 
@@ -23,3 +23,16 @@ class Content(TypedDict):
 
 
 ComponentMap = dict[str, Callable[..., rx.Component]]
+
+
+class FormField(TypedDict):
+    name: str
+    type: Optional[str]
+    label: Optional[str]
+    placeholder: Optional[str]
+    required: Optional[bool]
+    handler: Optional[str]
+
+
+class FormContent(TypedDict):
+    fields: list[FormField]

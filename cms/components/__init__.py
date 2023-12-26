@@ -1,5 +1,6 @@
 from ..utils.typing import ComponentMap
 from .divider import *
+from .forms_generator import jsonform
 from .image import *
 from .table import *
 from .variable import *
@@ -12,4 +13,5 @@ component_map: ComponentMap = dict(
     br=divider,
     img=image,
     variable=variable,
+    jsonform=jsonform,
 )

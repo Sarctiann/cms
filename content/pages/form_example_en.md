@@ -1,16 +1,12 @@
 # Form Example
 
-_This does not work:_
+_This is in development:_
 
-<hello_form />
+<jsonform>hello_form</jsonform>
 
-_This is under development:_
+_This works:_
 
-<iframe
-  src="http://localhost:3001/markdown-cheat-sheet/"
-  style="width: 100%; min-height: 300px; overflow: hidden;"
-  title='hello_form'
-></iframe>
+<jsonform>undeclared_form</jsonform>
 
 _This works:_
 

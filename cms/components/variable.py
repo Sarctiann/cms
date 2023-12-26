@@ -9,22 +9,24 @@ __all__ = ["variable"]
 
 def variable(children: str, *args, **kwargs) -> rx.Component:
     child = FormsHandlerState.variables[children]
-    component = rx.cond(
-        child,
-        rx.fragment(
+    return cast(
+        rx.Component,
+        rx.cond(
             child,
-            *args,
-            **kwargs,
-        ),
-        rx.text(
-            f' "{children}" var does not exist',
-            as_="span",
-            style=error_style,
-            *args,
-            **kwargs,
+            rx.fragment(
+                child,
+                *args,
+                **kwargs,
+            ),
+            rx.text(
+                f' "{children}" var does not exist',
+                as_="span",
+                style=error_style,
+                *args,
+                **kwargs,
+            ),
         ),
     )
-    return cast(rx.Component, component)
 
 
 error_style = dict(
