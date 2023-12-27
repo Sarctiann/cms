@@ -6,8 +6,17 @@ from cms.utils.typing import FormField
 from content.handler import FormsHandlerState
 
 
+class FormsHandlerPostState(FormsHandlerState):
+    """
+    The purpose of this class is to keep clean the FormsHandlerState class
+    """
+
+    def call_handler(self, data: dict = {}) -> None:
+        getattr(self, data["handler"])(data)
+
+
 def jsonform(children: str, *args, **kwargs) -> rx.Component:
-    cond = FormsHandlerState.declared_forms[children]
+    cond = FormsHandlerPostState.declared_forms[children]
     return cast(
         rx.Component,
         rx.cond(
@@ -23,32 +32,68 @@ def jsonform(children: str, *args, **kwargs) -> rx.Component:
 
 
 def generate_form(form_name: str) -> rx.Component:
+    handler = FormsHandlerPostState.form_handlers[form_name]
     return rx.form(
         rx.vstack(
             rx.foreach(
-                FormsHandlerState.formfields[form_name],
+                FormsHandlerPostState.form_fields[form_name],
                 lambda field: generate_field(field),
             ),
+            # This input is used to call the handler
+            rx.input(
+                name="handler",
+                type_="hidden",
+                value=handler,
+            ),
             style=format_stack_style,
-        )
+        ),
+        on_submit=FormsHandlerPostState.call_handler,
     )
 
 
 format_stack_style = dict(
     width="fit-content",
+    align_items="flex-start",
+    min_height="max-content",
 )
 
 
 def generate_field(field: FormField) -> rx.Component:
-    return rx.box(
+    return rx.fragment(
+        # TODO: refactor this when reflex supports rx.match
         rx.cond(
             field.type == "text",
-            rx.input(
-                name=field.name,
-                placeholder=field.placeholder,
+            rx.fragment(
+                rx.text(
+                    field.label,
+                    style=label_style,
+                ),
+                rx.input(
+                    name=field.name,
+                    placeholder=field.placeholder,
+                    is_required=field.is_required,
+                ),
             ),
-        )
+        ),
+        rx.cond(
+            field.type == "submit",
+            rx.button(
+                field.label,
+                name=field.name,
+                style=button_style,
+                type_="submit",
+            ),
+        ),
     )
+
+
+label_style = dict(
+    padding_left="16px",
+)
+
+button_style = dict(
+    width="100%",
+)
 
 
 def form_error(cond, children, *args, **kwargs) -> rx.Component:
@@ -63,7 +108,7 @@ def form_error(cond, children, *args, **kwargs) -> rx.Component:
                     style=missing_files_error_style,
                 ),
                 rx.text(
-                    f"(create it in content/forms/{children}_{FormsHandlerState.language}.json)",
+                    f"(create it in content/forms/{children}_{FormsHandlerPostState.language}.json)",
                     as_="span",
                     style=missing_files_error_style,
                 ),

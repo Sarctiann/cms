@@ -25,9 +25,17 @@ class FormsBaseState(BaseState):
         }
 
     @rx.var
-    def formfields(self) -> dict[str, list[FormField]]:
+    def form_fields(self) -> dict[str, list[FormField]]:
         return {
             form_name: form_json_content["fields"]
+            for form_name, form_json_content in self.jsonforms.items()
+            if form_json_content is not None
+        }
+
+    @rx.var
+    def form_handlers(self) -> dict[str, str]:
+        return {
+            form_name: form_json_content["handler"]
             for form_name, form_json_content in self.jsonforms.items()
             if form_json_content is not None
         }

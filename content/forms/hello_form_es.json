@@ -1,17 +1,24 @@
 {
+  "handler": "hello",
   "fields": [
     {
       "name": "name",
       "type": "text",
       "label": "Nombre",
       "placeholder": "Tu Nombre",
-      "required": true
+      "is_required": true
+    },
+    {
+      "name": "email",
+      "type": "text",
+      "label": "Correo Electrónico",
+      "placeholder": "Tu Email",
+      "is_required": true
     },
     {
       "name": "send",
-      "type": "button",
-      "label": "Enviar",
-      "handler": "hello"
+      "type": "submit",
+      "label": "Enviar"
     }
   ]
 }

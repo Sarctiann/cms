@@ -29,7 +29,7 @@ class FormField(rx.Base):
     type: str
     label: str
     placeholder: str
-    required: bool
+    is_required: bool
     handler: str
 
 

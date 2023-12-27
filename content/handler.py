@@ -20,4 +20,6 @@ class FormsHandlerState(FormsBaseState):
     #
     def hello(self, data: dict) -> None:
         print(f"Hello {data['name']}!")
-        self.variables["greeting"] = f"Hello {data['name']}!"
+        self.variables[
+            "greeting"
+        ] = f"Hello {data['name']}! Your email is {data['email']}"

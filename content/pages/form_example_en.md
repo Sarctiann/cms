@@ -1,6 +1,6 @@
 # Form Example
 
-_This is in development:_
+_This works:_
 
 <jsonform>hello_form</jsonform>
 
