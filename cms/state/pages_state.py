@@ -11,18 +11,19 @@ class PagesState(BaseState):
     """The pages state."""
 
     @rx.var
-    def pages(self) -> list[Page] | None:
-        if self.content:
-            new_pages: list[Page] = [
-                Page(
-                    page_title=s.page_title,
-                    page_route=s.page_route,
-                    md_file=s.md_file,
-                )
-                for s in self.content.pages
-                if all(attr in s for attr in s.keys())
-            ]
-            return new_pages
+    def pages(self) -> list[Page]:
+        if self.content is None:
+            return []
+        new_pages: list[Page] = [
+            Page(
+                page_title=s.page_title,
+                page_route=s.page_route,
+                md_file=s.md_file,
+            )
+            for s in self.content.pages
+            if all(attr in s for attr in s)
+        ]
+        return new_pages
 
     @rx.var
     def page_tabs(self) -> list[tuple[str, str, str]]:

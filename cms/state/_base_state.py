@@ -1,4 +1,4 @@
-from typing import Literal, cast
+from typing import Literal
 
 import reflex as rx
 
@@ -33,10 +33,10 @@ class BaseState(rx.State):
     def on_mount(self) -> rx.event.EventSpec | None:
         """Reload the content state."""
         try:
-            redirect = rx.redirect(
+            redirect: rx.event.EventSpec = rx.redirect(
                 self.content.pages[0].page_route,
             )
-            self.language = self.content.get("default_lang", "en")
+            self.language = self.content.default_lang
             print(f'redirecting to "{self.content.pages[0].page_route}"')
             return redirect
 
