@@ -1,6 +1,7 @@
 from typing import cast
 
 import reflex as rx
+from cms.utils.typing import FormField
 
 from content.handler import FormsHandlerState
 
@@ -22,14 +23,31 @@ def jsonform(children: str, *args, **kwargs) -> rx.Component:
 
 
 def generate_form(form_name: str) -> rx.Component:
-    fields = FormsHandlerState.formfields[form_name]
+    return rx.form(
+        rx.vstack(
+            rx.foreach(
+                FormsHandlerState.formfields[form_name],
+                lambda field: generate_field(field),
+            ),
+            style=format_stack_style,
+        )
+    )
 
+
+format_stack_style = dict(
+    width="fit-content",
+)
+
+
+def generate_field(field: FormField) -> rx.Component:
     return rx.box(
-        "Here goes the magic",
-        rx.foreach(
-            fields,
-            lambda field: rx.text(field["name"]),
-        ),
+        rx.cond(
+            field.type == "text",
+            rx.input(
+                name=field.name,
+                placeholder=field.placeholder,
+            ),
+        )
     )
 
 

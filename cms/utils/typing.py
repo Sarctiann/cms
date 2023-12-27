@@ -1,38 +1,37 @@
-from typing import Callable, Literal, Optional, TypedDict
+from typing import Callable, Literal, Optional
 
 import reflex as rx
 
 
-class AppBarImg(TypedDict):
+class AppBarImg(rx.Base):
     svg_name: str
     colors: dict[str, tuple[str, str]]
 
 
-class Page(TypedDict):
+class Page(rx.Base):
     page_title: str
     page_route: str
     md_file: str
 
 
-class Content(TypedDict):
+class Content(rx.Base):
     app_bar_img: AppBarImg
     default_lang: Literal["en", "es"]
     pages: list[Page]
     forms: list[str]
-    api_files: list[str]
 
 
 ComponentMap = dict[str, Callable[..., rx.Component]]
 
 
-class FormField(TypedDict):
+class FormField(rx.Base):
     name: str
-    type: Optional[str]
-    label: Optional[str]
-    placeholder: Optional[str]
-    required: Optional[bool]
-    handler: Optional[str]
+    type: str
+    label: str
+    placeholder: str
+    required: bool
+    handler: str
 
 
-class FormContent(TypedDict):
+class FormContent(rx.Base):
     fields: list[FormField]

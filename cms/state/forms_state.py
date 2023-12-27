@@ -11,9 +11,10 @@ __all__ = ["FormsBaseState"]
 class FormsBaseState(BaseState):
     @rx.var
     def jsonforms(self) -> dict[str, FormContent | None]:
+        if self.content is None:
+            return {}
         return {
-            form_name: self.form_content(form_name)
-            for form_name in self.content.get("forms", [])
+            form_name: self.form_content(form_name) for form_name in self.content.forms
         }
 
     @rx.var

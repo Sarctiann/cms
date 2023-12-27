@@ -9,6 +9,8 @@ __all__ = ["AppBarState"]
 class AppBarState(BaseState):
     @rx.var
     def themed_svg_light(self) -> str:
+        if self.content is None:
+            return ""
         logo_name, logo_colors = self.__get_name_and_colors(self.content)
         with open(f"assets/{logo_name}.svg", "r") as svg:
             svg_logo = svg.read()
@@ -19,6 +21,8 @@ class AppBarState(BaseState):
 
     @rx.var
     def themed_svg_dark(self) -> str:
+        if self.content is None:
+            return ""
         logo_name, logo_colors = self.__get_name_and_colors(self.content)
         with open(f"assets/{logo_name}.svg", "r") as svg:
             svg_logo = svg.read()
@@ -33,9 +37,9 @@ class AppBarState(BaseState):
     def __get_name_and_colors(
         self, cnt: Content
     ) -> tuple[str, dict[str, tuple[str, str]]]:
-        logo = cnt.get("app_bar_img")
-        name = logo.get("svg_name")
-        colors = logo.get("colors")
+        logo = cnt.app_bar_img
+        name = logo.svg_name
+        colors = logo.colors
         for c in colors.values():
             assert len(c) % 2 == 0, ValueError(
                 "The length of the colors must be even.",
