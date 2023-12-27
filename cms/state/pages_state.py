@@ -64,11 +64,11 @@ class PagesState(BaseState):
             )
             .replace(
                 "<variable>",
-                "<div><variable>",
+                "<span><variable>",
             )
             .replace(
                 "</variable>",
-                "</variable></div>",
+                "</variable></span>",
             )
         )
         return content
