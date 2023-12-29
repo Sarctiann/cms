@@ -23,3 +23,7 @@ _Esto funciona:_
 _Esto funciona:_
 
 <variable>undeclared_var</variable>
+
+_Esto funciona:_
+
+<md-variable>markdown</md-variable>
