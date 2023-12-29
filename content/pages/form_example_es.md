@@ -12,6 +12,10 @@ _Esto funciona:_
 
 <jsonform>undeclared_form</jsonform>
 
+#
+
+---
+
 _Esto funciona:_
 
 <variable>greeting</variable>

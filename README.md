@@ -6,15 +6,14 @@ The goal is to create a CMS, with a simple and intuitive interface that allows t
 
 ## TODO | In Progress:
 
-- implement Forms:
-
-  - Crate md variables
-  - Resolve .json structure for more complex forms
-
 - update the API Reference in the home en/es pages:
 
   - Add `content` folder structure
   - Add forms structure
+
+## BACKLOG:
+
+- Resolve JSON forms structure for more complex forms
 
 ---
 

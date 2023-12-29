@@ -12,6 +12,10 @@ _This works:_
 
 <jsonform>undeclared_form</jsonform>
 
+#
+
+---
+
 _This works:_
 
 <variable>greeting</variable>
@@ -19,3 +23,7 @@ _This works:_
 _This works:_
 
 <variable>undeclared_var</variable>
+
+_This works:_
+
+<md-variable>markdown</md-variable>

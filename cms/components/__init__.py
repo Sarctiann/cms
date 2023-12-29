@@ -4,6 +4,7 @@ from .forms_generator import jsonform
 from .image import *
 from .table import *
 from .variable import *
+from .error import *
 
 __all__ = ["component_map"]
 
@@ -14,4 +15,5 @@ component_map: ComponentMap = dict(
     img=image,
     variable=variable,
     jsonform=jsonform,
+    error=error
 )

@@ -1,13 +1,21 @@
+import re
+
 import reflex as rx
 
 from ..utils.get_file_content import file_to_str
 from ..utils.typing import Page
-from ._base_state import BaseState
+
+# from ._base_state import BaseState
+
+from content.handler import FormsHandlerState
 
 __all__ = ["PagesState"]
 
 
-class PagesState(BaseState):
+md_var_pattern = re.compile(r"\<md-variable\>(\w+)\</md-variable\>")
+
+
+class PagesState(FormsHandlerState):
     """The pages state."""
 
     @rx.var
@@ -52,6 +60,16 @@ class PagesState(BaseState):
         content = file_to_str(
             f"content/pages/{self.md_files[index]}_{self.language}.md"
         )
+
+        md_vars = md_var_pattern.findall(content)
+
+        for var in md_vars:
+            value = self.variables.get(var)
+            content = content.replace(
+                f"<md-variable>{var}</md-variable>",
+                value or f"<error>{var}</error>",
+            )
+
         # This is required to avoid the markdown to render these tags into a <p> tag.
         content = (
             content.replace(

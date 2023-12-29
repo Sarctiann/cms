@@ -3,20 +3,11 @@ from typing import cast
 import reflex as rx
 from cms.utils.typing import FormField
 
-from content.handler import FormsHandlerState
-
-
-class FormsHandlerPostState(FormsHandlerState):
-    """
-    The purpose of this class is to keep clean the FormsHandlerState class
-    """
-
-    def call_handler(self, data: dict = {}) -> None:
-        getattr(self, data["handler"])(data)
+from ..state.post_form_state import PostFormsHandlerState
 
 
 def jsonform(children: str, *args, **kwargs) -> rx.Component:
-    cond = FormsHandlerPostState.declared_forms[children]
+    cond = PostFormsHandlerState.declared_forms[children]
     return cast(
         rx.Component,
         rx.cond(
@@ -32,11 +23,11 @@ def jsonform(children: str, *args, **kwargs) -> rx.Component:
 
 
 def generate_form(form_name: str) -> rx.Component:
-    handler = FormsHandlerPostState.form_handlers[form_name]
+    handler = PostFormsHandlerState.form_handlers[form_name]
     return rx.form(
         rx.vstack(
             rx.foreach(
-                FormsHandlerPostState.form_fields[form_name],
+                PostFormsHandlerState.form_fields[form_name],
                 lambda field: generate_field(field),
             ),
             # This input is used to call the handler
@@ -47,7 +38,7 @@ def generate_form(form_name: str) -> rx.Component:
             ),
             style=format_stack_style,
         ),
-        on_submit=FormsHandlerPostState.call_handler,
+        on_submit=PostFormsHandlerState.call_handler,
     )
 
 
@@ -108,7 +99,7 @@ def form_error(cond, children, *args, **kwargs) -> rx.Component:
                     style=missing_files_error_style,
                 ),
                 rx.text(
-                    f"(create it in content/forms/{children}_{FormsHandlerPostState.language}.json)",
+                    f"(create it in content/forms/{children}_{PostFormsHandlerState.language}.json)",
                     as_="span",
                     style=missing_files_error_style,
                 ),

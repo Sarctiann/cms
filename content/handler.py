@@ -14,12 +14,18 @@ class FormsHandlerState(FormsBaseState):
         # Declare your variables here
         #
         greeting="Hello default variable!",
+        markdown="## Markdown default variable!",
     )
 
     # Declare your handlers here
     #
     def hello(self, data: dict) -> None:
         print(f"Hello {data['name']}!")
+
         self.variables[
             "greeting"
-        ] = f"Hello {data['name']}! Your email is {data['email']}"
+        ] = f"## Hello {data['name']}! Your email is {data['email']}"
+
+        self.variables[
+            "markdown"
+        ] = f"## Hello {data['name']}! Your email is {data['email']}"
