@@ -1,10 +1,10 @@
 from ..utils.typing import ComponentMap
 from .divider import *
+from .error import *
 from .forms_generator import jsonform
 from .image import *
 from .table import *
 from .variable import *
-from .error import *
 
 __all__ = ["component_map"]
 
